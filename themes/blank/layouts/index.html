@@ -1,21 +1,22 @@
 {{ define "main" }}
-  <main>
-    <div class="h-[56vh] relative px-[6vw]">
-      <h1 class="page-title absolute bottom-24">
-        test
-      </h1>
-    </div>
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow eyebrow--accent">Jitachi &mdash; Software designer</p>
+      {{ partial "hero.html" . }}
+    </section>
 
-    <ul
-      class="grid grid-cols-1 md:grid-cols-2 border-t border-r border-solid border-black/5"
-      id="posts-container"
-    >
-      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-      {{ range $paginator.Pages }}
-
-        {{ .Render "summary" }}
-
-      {{ end }}
-    </ul>
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+    <section aria-labelledby="writing-label">
+      <div class="section-head">
+        <h2 id="writing-label" class="eyebrow">Writing</h2>
+        <span class="eyebrow">{{ len (where .Site.RegularPages "Type" "posts") }} entries</span>
+      </div>
+      <ol class="index" style="counter-reset: post {{ $paginator.PageNumber | add -1 | mul $paginator.PagerSize }};">
+        {{ range $paginator.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      </ol>
+      {{ partial "pagination.html" . }}
+    </section>
   </main>
 {{ end }}

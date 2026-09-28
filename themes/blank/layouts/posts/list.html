@@ -1,12 +1,15 @@
 {{ define "main" }}
-
-<ul class="gap-2">
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-  {{ range $paginator.Pages }}
-
-    {{ .Render "summary" }}
-
-  {{ end }}
-</ul>
-
+  <main class="shell">
+    <header class="list-head">
+      <p class="eyebrow eyebrow--accent">Archive</p>
+      <h1>Writing</h1>
+    </header>
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+    <ol class="index" style="border-top: 1px solid var(--color-rule-strong);">
+      {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </ol>
+    {{ partial "pagination.html" . }}
+  </main>
 {{ end }}

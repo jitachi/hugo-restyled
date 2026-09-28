@@ -1,33 +1,25 @@
-<header class="flex items-center justify-between">
-  <div
-    class="glass-container flex items-center gap-2 py-3 px-4 rounded-full relative"
-  >
-    <!-- Sliding background indicator -->
+<header>
+  <div class="glass-container">
+    <!-- Sliding underline indicator (driven by the nav script in baseof) -->
     <div class="nav-indicator"></div>
 
-    <a class="logo relative z-10 p-1" href="{{ "/" | relURL }}" data-nav-item>
-      <img
-        class="w-7 min-w-7 rounded-full border border-white"
-        src="{{ "img/avatar.png" | relURL }}"
-      />
-      <!-- {{ .Site.Title }} -->
+    <a class="logo" href="{{ "/" | relURL }}" data-nav-item>
+      <img src="{{ "img/avatar.png" | relURL }}" alt="" />
+      <span class="wordmark">{{ .Site.Title }}</span>
     </a>
 
-    <div class="flex gap-0 relative z-10">
+    <nav class="nav-links" aria-label="Main">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
         <a
-          class="p-2 px-4 text-base font-[600] transition ease-in-out duration-200 rounded-full {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-            active
-          {{ end }}
-        "
+          class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}"
           href="{{ .URL | relURL }}"
           title="{{ .Title }}"
           data-nav-item
           >{{ .Name }}</a
         >
       {{ end }}
-    </div>
+    </nav>
   </div>
 
   {{ partial "theme-switcher.html" }}

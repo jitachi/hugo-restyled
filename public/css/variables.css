@@ -1,56 +1,58 @@
 :root {
-  /* Font Sizing - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /* Type scale - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-  --font-base: calc(16px + 0.25vw);
+  --font-base: calc(15px + 0.25vw);
 
-  --font-size-display: calc(var(--font-base) * 4.5); /* page-title */
-  --font-size-huge: calc(var(--font-base) * 3); /* h1 */
-  --font-size-largest: calc(
-    var(--font-size-larger) * 1.1875
-  ); /* h2 - 33.84px [^ 5.34px] */
-  --font-size-larger: calc(
-    var(--font-size-large) * 1.25
-  ); /* h3 - 28.50px [^ 5.70px] */
-  --font-size-large: calc(
-    var(--font-base) * 1.125
-  ); /* h4 - 22.80px [^ 2.53px] */
-
-  --font-size-medium: calc(var(--font-base) * 1); /*  p ~ 20.27px */
-
-  --font-size-small: calc(var(--font-base) * 1.125);
-
+  --font-size-display: clamp(2.75rem, 7vw + 1rem, 8.5rem);
+  --font-size-huge: clamp(2.25rem, 4vw + 1rem, 4.5rem);
+  --font-size-largest: calc(var(--font-base) * 1.75);
+  --font-size-larger: calc(var(--font-base) * 1.375);
+  --font-size-large: calc(var(--font-base) * 1.125);
+  --font-size-medium: var(--font-base);
+  --font-size-small: calc(var(--font-base) * 0.875);
   --font-size-smaller: calc(var(--font-base) * 0.75);
+  --font-size-reading: calc(17px + 0.3vw);
 
-  --font-size-bigtext: calc(var(--font-size-largest) * 1.75);
-
-  /* Line Height - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-  --line-height-xs: 1.125;
+  --line-height-xs: 1.05;
   --line-height-sm: 1.25;
   --line-height-md: 1.5;
-  --line-height-lg: 1.65;
+  --line-height-lg: 1.7;
 
-  /* Font -Family - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  --font-family-serif: "Recife Text", Georgia, serif;
+  --font-family-sans: "Messina Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "Jetbrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    monospace;
 
-  --font-family-serif: "Recife Text", serif;
-  --font-family-sans: "Messina Sans", sans-serif;
-  --font-family-mono: "IBM Plex Mono", SF Mono, SFMono-Regular, ui-monospace,
-    Menlo, Consolas, monospace;
+  /* Layout - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-  --size-text: 720px;
-  --content-width: 720px;
+  --size-text: 680px;
+  --content-width: 680px;
+  --gutter: clamp(20px, 5vw, 72px);
 
-  --color-foreground: white;
-  --color-background: #12121a;
-  --color-secondary: hsla(0, 100%, 100%, 0.5);
-  --color-tertiary: hsla(0, 100%, 100%, 0.3);
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+  --sp-32: 128px;
 
-  --sp-xxs: calc(var(--font-base) * 0.375);
-  --sp-xs: calc(var(--font-base) * 0.5);
-  --sp-md: calc(var(--font-size) * 1);
-  --sp-sm: calc(var(--font-size) * 0.75);
-  --sp-lg: calc(var(--font-size) * 1.5);
-  --sp-xl: calc(var(--font-size) * 2);
-  --sp-xxl: calc(var(--font-size) * 3);
-  --sp-xxxl: calc(var(--font-size) * 5);
+  /* Colour (light is the default; html.dark overrides) - - - - - - - - - - - - - - - - - - */
+
+  --color-background: #f3efe6;
+  --color-surface: #ebe5d8;
+  --color-foreground: #1b1915;
+  --color-secondary: #5c574d;
+  --color-tertiary: #8d8778;
+  --color-accent: #b8461b;
+  --color-accent-soft: rgba(184, 70, 27, 0.12);
+  --color-rule: rgba(27, 25, 21, 0.14);
+  --color-rule-strong: #1b1915;
+  --color-bg-lightest: rgba(27, 25, 21, 0.045);
+  --color-bg-light: rgba(27, 25, 21, 0.08);
+  --color-border-light: rgba(27, 25, 21, 0.14);
+  --color-selection: #f0c9a8;
 }

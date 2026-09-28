@@ -1,23 +1,25 @@
 {{ define "main" }}
-
-<ul class="px-[8vw] pt-[8vw]">
-  {{ range where .Pages "Section" "work" }}
-  <li class="mb-24">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <p class="opacity-45 mb-8 max-w-xl">
-      {{ .Summary }} {{ if .Truncated }}
-      <a href="{{ .Permalink }}">Read more...</a>
+  <main class="shell">
+    <header class="list-head">
+      <p class="eyebrow eyebrow--accent">Selected</p>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <ul class="work-list">
+      {{ range where .Pages "Section" "work" }}
+        {{ $p := . }}
+        <li>
+          <div class="work-head">
+            <div>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p>{{ .Summary }}</p>
+            </div>
+            <time class="eyebrow" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+          </div>
+          {{ with .Resources.GetMatch .Params.featured_image }}
+            <a class="frame" href="{{ $p.RelPermalink }}"><img alt="" src="{{ .RelPermalink }}" loading="lazy" /></a>
+          {{ end }}
+        </li>
       {{ end }}
-    </p>
-    <div
-      class="flex content-center justify-center p-32 bg-gray-800 overflow-hidden"
-    >
-      {{ with .Resources.GetMatch .Params.featured_image }}
-      <img class="max-w-screen-xl" alt="..." src="{{ .RelPermalink }}" />
-      {{ end }}
-    </div>
-  </li>
-  {{ end }}
-</ul>
-
+    </ul>
+  </main>
 {{ end }}

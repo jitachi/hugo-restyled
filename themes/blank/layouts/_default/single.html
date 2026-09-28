@@ -1,41 +1,29 @@
 {{ define "main" }}
-  <!-- Full-width Page container-->
-  <main class="relative w-full flex flex-col justify-center px-[6vw] pt-[4vw]">
-    <!-- Narrow column of content -->
-    <div class="max-w-4xl mx-auto">
-      <div class=" mx-auto max-w-[--content-width] relative mb-12">
-        <time
-          class="text-base font-[600] opacity-30"
-          datetime="{{ .Date.Format "January 2, 2006" }}"
-        >
-          {{ .Date.Format "January 2, 2006" }}
-        </time>
+  <main class="shell">
+    <article>
+      <header class="post-head">
+        <div class="eyebrow">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ with .Params.category }}<span aria-hidden="true">/</span><span class="eyebrow--accent">{{ . }}</span>{{ end }}
+          {{ if gt .ReadingTime 1 }}<span aria-hidden="true">/</span><span>{{ .ReadingTime }} min read</span>{{ end }}
+        </div>
+        <h1 class="post-title">{{ .Title }}</h1>
+      </header>
 
-        <p class="text-4xl font-[600] tracking-[-0.0375em] mt-4">
-          {{ .Title }}
-        </p>
-      </div>
-
-      <div
-        class="long-form"
-        style="margin-left: 0; margin-right: 0; max-width: none;"
-      >
+      <div class="long-form">
         {{ .Content }}
       </div>
 
-      {{ with .Params.tags }}
-        <div>
+      <footer class="post-foot">
+        <a class="back-link" href="{{ "/" | relURL }}">&larr; All writing</a>
+        {{ with .Params.tags }}
           <ul id="tags">
             {{ range . }}
-              <li>
-                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"
-                  >{{ . }}</a
-                >
-              </li>
+              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
             {{ end }}
           </ul>
-        </div>
-      {{ end }}
-    </div>
+        {{ end }}
+      </footer>
+    </article>
   </main>
 {{ end }}

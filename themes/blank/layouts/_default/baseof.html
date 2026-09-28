@@ -39,19 +39,23 @@
     <link rel="stylesheet" href="{{ "css/type.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "css/tailwind.css" | relURL }}" />
+    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)" />
 
     <link rel="shortcut icon" type="image/png" href="/favicon.svg" />
     <link rel="shortcut icon" sizes="192x192" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
   </head>
   <body>
-    <div class="sticky top-0 left-0 z-50 px-[4vw] py-[2vw]">
+    <div class="site-header shell">
       {{ partial "header.html" . }}
     </div>
 
     <div id="page-content">
       {{ block "main" . }}{{ end }}
     </div>
+
+    {{ partial "footer.html" . }}
 
     <script>
       // SPA-like navigation with sliding animations
@@ -153,6 +157,8 @@
               indicator.style.opacity = "1";
               indicator.offsetHeight;
               indicator.style.transition = "";
+              // Glide from the previous page's spot to the current item
+              requestAnimationFrame(() => moveIndicatorTo(activeItem, false));
             } else {
               moveIndicatorTo(activeItem, true);
             }
