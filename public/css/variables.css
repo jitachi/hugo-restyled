@@ -4,7 +4,7 @@
   --font-base: calc(15px + 0.25vw);
 
   --font-size-display: clamp(2.75rem, 7vw + 1rem, 8.5rem);
-  --font-size-huge: clamp(2.25rem, 4vw + 1rem, 4.5rem);
+  --font-size-huge: clamp(1.75rem, 1.6vw + 1rem, 2.5rem);
   --font-size-largest: calc(var(--font-base) * 1.75);
   --font-size-larger: calc(var(--font-base) * 1.375);
   --font-size-large: calc(var(--font-base) * 1.125);
@@ -42,17 +42,17 @@
 
   /* Colour (light is the default; html.dark overrides) - - - - - - - - - - - - - - - - - - */
 
-  --color-background: #f3efe6;
-  --color-surface: #ebe5d8;
-  --color-foreground: #1b1915;
-  --color-secondary: #5c574d;
-  --color-tertiary: #8d8778;
-  --color-accent: #b8461b;
-  --color-accent-soft: rgba(184, 70, 27, 0.12);
-  --color-rule: rgba(27, 25, 21, 0.14);
-  --color-rule-strong: #1b1915;
-  --color-bg-lightest: rgba(27, 25, 21, 0.045);
-  --color-bg-light: rgba(27, 25, 21, 0.08);
-  --color-border-light: rgba(27, 25, 21, 0.14);
-  --color-selection: #f0c9a8;
+  --color-background: #fafaf9;
+  --color-surface: #f0f0ee;
+  --color-foreground: #171717;
+  --color-secondary: #666663;
+  --color-tertiary: #9b9b97;
+  --color-accent: #171717;
+  --color-accent-soft: rgba(23, 23, 23, 0.06);
+  --color-rule: rgba(23, 23, 23, 0.09);
+  --color-rule-strong: rgba(23, 23, 23, 0.9);
+  --color-bg-lightest: rgba(23, 23, 23, 0.04);
+  --color-bg-light: rgba(23, 23, 23, 0.07);
+  --color-border-light: rgba(23, 23, 23, 0.09);
+  --color-selection: #e4e4e1;
 }
