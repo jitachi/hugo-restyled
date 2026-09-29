@@ -3,9 +3,8 @@
     <!-- Sliding underline indicator (driven by the nav script in baseof) -->
     <div class="nav-indicator"></div>
 
-    <a class="logo" href="{{ "/" | relURL }}" data-nav-item>
+    <a class="logo" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}" data-nav-item>
       <img src="{{ "img/avatar.png" | relURL }}" alt="" />
-      <span class="wordmark">{{ .Site.Title }}</span>
     </a>
 
     <nav class="nav-links" aria-label="Main">
