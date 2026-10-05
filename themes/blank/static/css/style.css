@@ -147,7 +147,7 @@ body {
 }
 
 .mono {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
 }
 
 .sans {
@@ -175,7 +175,7 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.08em;
@@ -199,7 +199,7 @@ body {
 .back-link {
   display: inline-flex;
   gap: var(--sp-2);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 13px;
   color: var(--color-secondary);
   transition: color 0.15s ease;
@@ -270,7 +270,7 @@ main {
 }
 
 .nav-links a {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 13px;
   letter-spacing: 0.02em;
   color: var(--color-secondary);
@@ -381,7 +381,7 @@ main {
 
 .index-row a::before {
   content: counter(post, decimal-leading-zero);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 12px;
   color: var(--color-tertiary);
 }
@@ -492,7 +492,7 @@ main {
 }
 
 #tags a {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 12px;
   padding: 2px var(--sp-2);
   border: 1px solid var(--color-rule);
@@ -554,7 +554,7 @@ main {
 
 .long-form h5,
 .long-form h6 {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -596,7 +596,7 @@ main {
 }
 
 .long-form ol li::marker {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 0.75em;
   color: var(--color-tertiary);
 }
@@ -839,7 +839,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding-top: var(--sp-8);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 13px;
   color: var(--color-tertiary);
 }
@@ -863,7 +863,7 @@ main {
 }
 
 .site-footer__note {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-sans);
   font-size: 12px;
   line-height: 16px;
   color: var(--color-tertiary);
