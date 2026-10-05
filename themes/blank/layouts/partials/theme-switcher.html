@@ -16,7 +16,7 @@
   const themeToggleBtn = document.getElementById("theme-toggle");
   const sunIcon = document.getElementById("sun-icon");
   const moonIcon = document.getElementById("moon-icon");
-  let currentTheme = localStorage.getItem("theme") || "auto"; 
+  let currentTheme = localStorage.getItem("theme") || "dark";
 
   const systemDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -52,7 +52,7 @@
 
   // ✅ Toggle theme when button is clicked
   themeToggleBtn.addEventListener("click", () => {
-    let newTheme = localStorage.getItem("theme") || "auto";
+    let newTheme = localStorage.getItem("theme") || "dark";
 
     if (newTheme === "light" || newTheme === "auto") {
       localStorage.setItem("theme", "dark");
