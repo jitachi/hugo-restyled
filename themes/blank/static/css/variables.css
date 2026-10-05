@@ -28,6 +28,7 @@
   --size-text: 680px;
   --content-width: 680px;
   --gutter: clamp(20px, 5vw, 72px);
+  --max-width: 1200px;
 
   --sp-1: 4px;
   --sp-2: 8px;
