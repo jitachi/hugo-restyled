@@ -169,9 +169,10 @@ body {
 
 /* Shared bits - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+/* Caps content at --max-width, centered; backgrounds and borders stay full-bleed */
 .shell {
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
+  padding-left: max(var(--gutter), calc((100% - var(--max-width)) / 2));
+  padding-right: max(var(--gutter), calc((100% - var(--max-width)) / 2));
 }
 
 .eyebrow {
